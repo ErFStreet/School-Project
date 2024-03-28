@@ -1,4 +1,4 @@
-﻿namespace Domain.ViewModels;
+﻿namespace Domain.ViewModels.User;
 
 public class DetailUserViewModel : object
 {

@@ -7,4 +7,8 @@ public class Role : IdentityRole<int>, IEntityHasIsDeleted
     }
 
     public bool IsDeleted { get; set; }
+
+    #region Relation
+    public List<User>? Users { get; set; }
+    #endregion
 }

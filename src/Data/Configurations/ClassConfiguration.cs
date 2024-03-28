@@ -6,5 +6,8 @@ internal class ClassConfiguration : IEntityTypeConfiguration<Class>
     {
         builder.Property(current => current.ClassCode)
             .IsRequired();
+
+        builder.Property(current => current.IsDeleted)
+            .HasDefaultValue(false);
     }
 }

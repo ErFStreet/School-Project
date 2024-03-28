@@ -11,7 +11,7 @@ public class User : IdentityUser<int>, IEntityHasIsSystemic, IEntityHasIsBanned
     public required string LastName { get; set; }
 
     [ForeignKey("Class")]
-    public int ClassId { get; set; }
+    public int? ClassId { get; set; }
 
     public bool IsSystemic { get; set; }
 

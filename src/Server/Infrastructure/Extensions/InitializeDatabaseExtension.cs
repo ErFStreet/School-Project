@@ -52,8 +52,8 @@ public static class InitializeDatabaseExtension
         var userManager =
             scope.ServiceProvider.GetRequiredService<UserManager<User>>();
 
-        await userManager.CreateAsync(user);
+        await userManager.CreateAsync(user, password: "erfanEdalati48@");
 
-        await database.SaveChangesAsync();
+        await userManager.AddToRoleAsync(user, RoleHelper.Admin);
     }
 }

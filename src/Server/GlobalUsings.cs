@@ -1,16 +1,20 @@
 ﻿global using Microsoft.AspNetCore.Authentication.JwtBearer;
+global using Server.Infrastructure.Contracts.Interfaces;
 global using System.Net;
 global using System.Security.Claims;
 global using Helper.Enums;
 global using Helper.Response;
 global using Microsoft.IdentityModel.Tokens;
 global using Server.Infrastructure.Token;
+global using Domain.ViewModels.Role;
 global using System.Text;
 global using Server.Infrastructure.Extensions;
 global using Data;
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.AspNetCore.Builder;
 global using Microsoft.Extensions.Hosting;
+global using Data.SeedWork;
+global using Data.SeedWork.Contracts;
 global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.AspNetCore.Http;
@@ -23,6 +27,12 @@ global using Helper;
 global using Microsoft.AspNetCore.Identity;
 global using Microsoft.AspNetCore.Mvc;
 global using Server.Infrastructure.Base;
+global using Domain.ViewModels.User;
+global using Domain.Entities.Learn;
+global using Domain.ViewModels.Class;
+global using Server.Servicrs;
+
+
 
 
 
