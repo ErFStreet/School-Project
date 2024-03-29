@@ -14,6 +14,15 @@ public class ClassController : BaseController
     #endregion /Constructure
 
     #region Methods
+    [HttpGet("Classes")]
+    public async Task<ActionResult<Result<List<ListClassViewModel>>>> Classes()
+    {
+        var response =
+            await _classService.GetAllAsync();
+
+        return response;
+    }
+
     [HttpPost("CreateClass")]
     public async Task<ActionResult<Response>> Create(CreateClassViewModel viewModel)
     {
@@ -28,15 +37,6 @@ public class ClassController : BaseController
     {
         var response =
             await _classService.DeleteAsync(classId: classId);
-
-        return response;
-    }
-
-    [HttpGet("Classes")]
-    public async Task<ActionResult<Result<List<ListClassViewModel>>>> Classes()
-    {
-        var response =
-            await _classService.GetAllAsync();
 
         return response;
     }

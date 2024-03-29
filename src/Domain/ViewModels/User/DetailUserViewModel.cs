@@ -6,9 +6,17 @@ public class DetailUserViewModel : object
     {
     }
 
-    public string? FullName { get; set; }
+    public int Id { get; set; }
+
+    public required string FirstName { get; set; }
+
+    public required string LastName { get; set; }
+
+    public required string UserName { get; set; }
 
     public string? Password { get; set; }
 
-    public string? RoleName { get; set; }
+    public int? ClassId { get; set; }
+
+    public string? ClassCode { get; set; }
 }

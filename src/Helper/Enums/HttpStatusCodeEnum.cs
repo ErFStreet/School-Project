@@ -7,4 +7,5 @@ public enum HttpStatusCodeEnum : int
     UnAuthorized = 401,
     ServerError = 500,
     BadRequest = 400,
+    UnKnowError = 520,
 }

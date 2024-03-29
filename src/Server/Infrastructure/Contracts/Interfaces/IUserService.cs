@@ -14,5 +14,5 @@ public interface IUserService
 
     Task<Result<List<ListRoleViewModel>>> GetAllRolesAsync();
 
-    Task<Result<EditUserViewModel>> GetUserForEdit(int userId);
+    Task<Result<DetailUserViewModel>> GetUserByIdAsync(int userId);
 }

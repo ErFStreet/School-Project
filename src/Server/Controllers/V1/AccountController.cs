@@ -2,13 +2,18 @@
 
 public class AccountController : BaseController
 {
+    #region Fields
     private readonly IUserService _userService;
+    #endregion /Fields
 
-    public AccountController(IUserService userService)
+    #region Constructure
+    public AccountController(IUserService userService) : base()
     {
         _userService = userService;
     }
+    #endregion /Constructure
 
+    #region Methods
     [HttpGet("Roles")]
     public async Task<Result<List<ListRoleViewModel>>> Roles()
     {
@@ -27,6 +32,16 @@ public class AccountController : BaseController
         return response;
     }
 
+    [HttpGet("InformationUser")]
+    public async Task<ActionResult<Result<DetailUserViewModel>>>
+        InformationUser(int userId)
+    {
+        var response =
+            await _userService.GetUserByIdAsync(userId);
+
+        return response;
+    }
+
     [HttpPost("CreateUser")]
     public async Task<ActionResult<Response>>
         CreateUser([FromBody] CreateUserViewModel viewModel)
@@ -37,4 +52,31 @@ public class AccountController : BaseController
         return response;
     }
 
+    [HttpPut("Edit")]
+    public async Task<ActionResult<Response>> Edit([FromBody] EditUserViewModel viewModel)
+    {
+        var response =
+            await _userService.EditAsync(viewModel);
+
+        return response;
+    }
+
+    [HttpPut("ChangeUserRole")]
+    public async Task<ActionResult<Response>> ChangeUserRole(int userId, string roleName)
+    {
+        var response =
+            await _userService.ChangeUserRoleAsync(userId, roleName);
+
+        return response;
+    }
+
+    [HttpDelete("Delete")]
+    public async Task<ActionResult<Response>> Delete(int userId)
+    {
+        var response =
+            await _userService.DeleteAsync(userId);
+
+        return response;
+    }
+    #endregion /Methods
 }

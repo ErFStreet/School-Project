@@ -17,7 +17,15 @@ public static class RegisterServicesExtension
 
         services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+        services.AddScoped<ILessonService, LessonService>();
+
         services.AddScoped<IClassService, ClassService>();
+
+        services.AddScoped<ILearnRelationService, LearnRelationService>();
+
+        services.AddScoped<IGeneratorTokenHelper, GeneratorTokenHelper>();
+
+        services.AddScoped<IAuthenticationService, AuthenticationService>();
 
         services.AddScoped<IUserService, UserService>();
     }

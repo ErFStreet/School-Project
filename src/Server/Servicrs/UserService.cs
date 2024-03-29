@@ -71,27 +71,31 @@ public class UserService : IUserService
 
         response.Value = new DetailUserViewModel
         {
-            FullName = $"{viewModel.FirstName} {viewModel.LastName}",
+            FirstName = viewModel.FirstName,
+            LastName = viewModel.LastName,
+            UserName = viewModel.UserName,
             Password = viewModel.Password,
-            RoleName = viewModel.RoleName,
         };
 
         return response;
     }
 
-    public async Task<Result<EditUserViewModel>> GetUserForEdit(int userId)
+    public async Task<Result<DetailUserViewModel>> GetUserByIdAsync(int userId)
     {
-        var response = new Result<EditUserViewModel>();
+        var response = new Result<DetailUserViewModel>();
 
         var result =
             await _userManager.Users!
             .AsQueryable()
-            .Select(current => new EditUserViewModel
+            .Include(current => current.Class)
+            .Where(current => current.Id == userId)
+            .Select(current => new DetailUserViewModel
             {
                 Id = current.Id,
                 FirstName = current.FirstName,
                 LastName = current.LastName,
                 UserName = current.UserName!,
+                ClassCode = current.Class!.ClassCode!,
                 ClassId = current.ClassId,
             })
             .FirstOrDefaultAsync();

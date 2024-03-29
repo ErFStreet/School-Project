@@ -1,6 +1,4 @@
-﻿using Helper.Enums;
-
-namespace Helper.Response;
+﻿namespace Helper.Response;
 
 public class Response : object
 {
