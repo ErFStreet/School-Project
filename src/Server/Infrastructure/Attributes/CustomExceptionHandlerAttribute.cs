@@ -11,22 +11,23 @@ public class CustomExceptionHandlerAttribute : ActionFilterAttribute
 
     public override void OnActionExecuted(ActionExecutedContext context)
     {
-        if (context.Exception is not null)
+        if (context.Exception != null)
         {
             var actionName =
                 context.RouteData.Values["action"]?.ToString();
 
             _logger.LogCritical
                 (exception: context.Exception,
-                actionName, context.Controller.GetType());
+                    message: context.Exception.Message,
+                    methodName: actionName, classType: context.Controller.GetType());
 
-            var response = new Response();
+            var result = new Response();
 
-            response.AddMessage(message: ResponseMessages.UnKnowError);
+            result.AddMessage(message: ResponseMessages.UnKnowError);
 
-            response.ChangeStatusCode(statusCodeEnum: HttpStatusCodeEnum.UnKnowError);
+            result.ChangeStatusCode(statusCodeEnum: HttpStatusCodeEnum.UnKnowError);
 
-            context.Result = response.ApiResult();
+            context.Result = result.ApiResult();
 
             context.ExceptionHandled = true;
         }
