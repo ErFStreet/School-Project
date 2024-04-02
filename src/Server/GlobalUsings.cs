@@ -37,6 +37,7 @@ global using Domain.ViewModels.User;
 global using Domain.Entities.Learn;
 global using Domain.ViewModels.Class;
 global using Server.Servicrs;
+global using Server.Infrastructure.Attributes;
 
 
 

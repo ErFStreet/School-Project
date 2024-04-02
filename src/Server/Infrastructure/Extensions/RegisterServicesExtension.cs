@@ -4,7 +4,10 @@ public static class RegisterServicesExtension
 {
     public static void RegisterServices(this IServiceCollection services)
     {
-        services.AddControllers();
+        services.AddControllers(currnet =>
+        {
+            currnet.Filters.Add<CustomExceptionHandlerAttribute>();
+        });
 
         services.AddEndpointsApiExplorer();
 
