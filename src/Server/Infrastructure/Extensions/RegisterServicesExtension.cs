@@ -28,5 +28,13 @@ public static class RegisterServicesExtension
         services.AddScoped<IAuthenticationService, AuthenticationService>();
 
         services.AddScoped<IUserService, UserService>();
+
+        // Register Logger
+
+        services.AddSingleton<ILogger, NLogAdapter>();
+
+        services.AddSingleton
+            (serviceType: typeof(ILogger<>),
+                implementationType: typeof(NLogAdapter<>));
     }
 }
