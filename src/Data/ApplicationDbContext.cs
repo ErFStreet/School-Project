@@ -4,7 +4,7 @@ public class ApplicationDbContext : IdentityDbContext<User, Role, int>
 {
     #region Constrcuture
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-        : base(options)
+        : base(options: options)
     {
     }
     #endregion /Constrcuture

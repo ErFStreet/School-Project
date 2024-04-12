@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server Layer", "Server Laye
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server", "src\Server\Server.csproj", "{6AAE819D-C2BD-4547-A40F-74F46A4F2988}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{0DDC4D8B-1DE1-4E68-979F-CD6C879D51CD}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared Layer", "Shared Layer", "{0DDC4D8B-1DE1-4E68-979F-CD6C879D51CD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helper", "src\Helper\Helper.csproj", "{73561134-C6C1-4563-8801-094206A7ECD8}"
 EndProject
@@ -30,7 +30,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dtat.Logging", "src\Shared\Libraries\Dtat.Logging\Dtat.Logging.csproj", "{7337D957-7B10-4CE6-AAF2-1061E947C552}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dtat.Logging.NLogAdapter", "src\Shared\Libraries\Dtat.Logging.NLogAdapter\Dtat.Logging.NLogAdapter.csproj", "{F4031DBF-7B9C-4167-861A-9B316BC369FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dtat.Logging.NLogAdapter", "src\Shared\Libraries\Dtat.Logging.NLogAdapter\Dtat.Logging.NLogAdapter.csproj", "{F4031DBF-7B9C-4167-861A-9B316BC369FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test Layer", "Test Layer", "{43952EC5-477B-4517-A06B-E9201381ED32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "src\Test\Test.csproj", "{0A72E403-052D-4D8C-A5A9-C668BF16EC08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,6 +66,10 @@ Global
 		{F4031DBF-7B9C-4167-861A-9B316BC369FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4031DBF-7B9C-4167-861A-9B316BC369FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4031DBF-7B9C-4167-861A-9B316BC369FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A72E403-052D-4D8C-A5A9-C668BF16EC08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A72E403-052D-4D8C-A5A9-C668BF16EC08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A72E403-052D-4D8C-A5A9-C668BF16EC08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A72E403-052D-4D8C-A5A9-C668BF16EC08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +86,8 @@ Global
 		{B46E3D60-66E2-40B7-8B6B-187959699037} = {0DDC4D8B-1DE1-4E68-979F-CD6C879D51CD}
 		{7337D957-7B10-4CE6-AAF2-1061E947C552} = {B46E3D60-66E2-40B7-8B6B-187959699037}
 		{F4031DBF-7B9C-4167-861A-9B316BC369FD} = {B46E3D60-66E2-40B7-8B6B-187959699037}
+		{43952EC5-477B-4517-A06B-E9201381ED32} = {B53FD4CD-31D8-4AFE-A843-4807BB25F726}
+		{0A72E403-052D-4D8C-A5A9-C668BF16EC08} = {43952EC5-477B-4517-A06B-E9201381ED32}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2B99CBA6-93AB-43FA-A04A-C990144A7684}
